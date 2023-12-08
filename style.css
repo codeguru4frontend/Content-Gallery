@@ -1,0 +1,132 @@
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+/* Set the background color for the page */
+body {
+  background-color: #f28080;
+}
+
+/* Style the heading */
+h1 {
+  text-align: center;
+  font-size: 36px;
+  margin-top: 40px;
+}
+
+/* Style the full image */
+.full-img {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  margin-bottom: 30px;
+}
+
+.displayed-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.dark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px 20px;
+  background-color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  color: #333;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.dark:hover {
+  background-color: #333;
+  color: #fff;
+  cursor: pointer;
+}
+
+.full-img:hover .overlay {
+  opacity: 1;
+}
+
+/* Style the thumbnail bar */
+.thumb-bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.selected {
+  border: 2px solid #333;
+  border-radius: 5px;
+  margin: 5px;
+}
+
+.selected:hover {
+  cursor: pointer;
+}
+
+.thumb-bar img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin: 5px;
+  transition: all 0.3s ease;
+}
+
+.thumb-bar img:hover {
+  transform: scale(1.1);
+}
+
+/* Style the gallery items */
+.gallery-item {
+  width: 30%;
+  margin: 20px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.gallery-item:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transform: translateY(-5px);
+}
+
+.gallery-item h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.gallery-item p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+/* Hide the text content when an item is in the gallery */
+.gallery-item .item-text {
+  display: none;
+}
+
+/* Show the text content when an item is selected */
+.selected .item-text {
+  display: block;
+}
